@@ -1,0 +1,21 @@
+.flexbox-container {
+    display: flex;
+    background-color: whitesmoke;
+    width: 1000px;
+    height: 835px;
+    align-items: top;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: lightgrey solid 3px;
+}
+
+/* .tiles {
+    flex: 1 1 25px
+} */
+
+#title {
+    display: flex;
+    width: 300px;
+    height: 220px;
+    font-style: italic;
+}
