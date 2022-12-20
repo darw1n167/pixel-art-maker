@@ -1,12 +1,13 @@
 
 let colors = {
     colors: ['red', 'blue', 'green', 'pink', 'purple', '#FFF8DC', '#696969', '#ffff00', '#8b4513', '#00FFFF',
-'orange', 'black', 'hotpink', 'lightgreen'],
+'orange', 'black', 'hotpink', 'white'],
     currentColor: '',
     draw: false
 }
 const canvasBody = document.getElementById('canvas');
 const colorPallet = document.createElement('div');
+document.body.style.backgroundColor = '#FDF5E6'
 document.body.style.display ='flex';
 document.body.style.justifyContent = 'center'
 canvasBody.style.display = 'flex';
@@ -45,13 +46,16 @@ function createSquares(num) {
             if (!colors.draw) return
             this.style.backgroundColor = colors.currentColor
         })
+        div.addEventListener('click', function() {
+            this.style.backgroundColor = colors.currentColor
+        })
     }
 }
 
 function createColors(obj) {
     for (let i = 0; i < obj.colors.length; i++) {
         let colorDiv = document.createElement('div');
-        colorDiv.style.cursor ='pointer';
+        colorDiv.style.cursor = 'pointer';
         colorDiv.style.display = 'flex-wrap()';
         colorDiv.style.border = '1px solid black';
         colorDiv.style.width = '60px';
@@ -62,7 +66,7 @@ function createColors(obj) {
         colorPallet.appendChild(colorDiv);
         colorDiv.addEventListener('click', function (e) {
             obj.currentColor = colorDiv.className;
-            console.log(obj.currentColor)
+        
         });
     }
 }
